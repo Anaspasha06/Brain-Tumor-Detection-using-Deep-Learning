@@ -7,29 +7,33 @@ Frontend is built with **HTML, CSS, and JavaScript**, while the backend uses **F
 
 ## 📂 Project Structure
 
-├── Model/ # Deep learning model + training
-│ ├── BrainTumorModel_1.h5
-│ ├── BrainTumorModel_1.json
-│ └── train.py
-├── static/ # Static assets
-│ ├── js/
-│ │ ├── detection.js
-│ │ └── model.js
-│ ├── detection.css
-│ └── home.css
-├── templates/ # HTML templates (Flask Jinja2)
-│ ├── complete_app.html
-│ └── home.html
-├── uploads/ # Uploaded MRI images
-│ ├── brain_tumor.png
-│ ├── brain_tumor1.png
-│ ├── brain1.jpeg
-│ ├── not_tumor.jpeg
-│ └── ...
-├── app.py # Main Flask app
-├── requirements.txt # Dependencies
-├── .gitattributes # Line ending config
-└── README.md # Project documentation
+Model/ # Deep learning model + training
+│── BrainTumorModel_1.h5
+│── BrainTumorModel_1.json
+│── train.py
+│
+static/ # Static assets
+│── js/
+│ │── detection.js
+│ │── model.js
+│── detection.css
+│── home.css
+│
+templates/ # HTML templates (Flask Jinja2)
+│── complete_app.html
+│── home.html
+│
+uploads/ # Uploaded MRI images
+│── brain_tumor.png
+│── brain_tumor1.png
+│── brain1.jpeg
+│── not_tumor.jpeg
+│── ...
+│
+app.py # Main Flask app
+requirements.txt # Dependencies
+.gitattributes # Line ending config
+README.md # Project documentation
 
 ---
 
