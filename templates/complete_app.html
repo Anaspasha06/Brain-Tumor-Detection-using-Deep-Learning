@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='detection.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/detection.js') }}"></script>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-content">
+            <h1>🧠 Brain Tumor Detection</h1>
+            <p>Upload an MRI scan to detect brain tumors using advanced AI</p>
+        </div>
+    </div>
+
+    <!-- Home Button -->
+    <div class="home-button-container">
+        <a href="/" class="home-button">← Back to Home</a>
+    </div>
+
+    <!-- Model Prediction Section -->
+    <div class="main-container">
+        <div class="upload-section">
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <label class="upload-label" for="imageUpload">
+                    Upload MRI Scan
+                </label>
+                <div id="dropzone" class="dropzone">
+                    <label for="imageUpload">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
+                        </svg>
+                        <p><span class="font-semibold">Click to upload</span> or drag and drop</p>
+                        <p class="text-xs">PNG, JPG or JPEG (MAX. 800x400px)</p>
+                        <input id="imageUpload" type="file" name="file" accept=".png, .jpg, .jpeg" />
+                    </label>
+                </div>
+            </form>
+
+            <div class="image-section" style="display:none;">
+                <div class="text-center">
+                    <img id="imagePreview" class="image-preview" src="#" alt="Uploaded MRI Scan"/>
+                    <div class="button-container">
+                        <button type="button" class="btn-predict" id="btn-predict">
+                            🔬 Check For Brain Tumor
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="loader" style="display:none;">
+                <div class="spinner"></div>
+                <p>Analyzing image...</p>
+            </div>
+            
+            <div id="result" class="result">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
